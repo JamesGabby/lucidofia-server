@@ -16,6 +16,10 @@ app.use(express.json())
 app.use(userRouter)
 app.use(dreamRouter)
 
+app.get('/', (req, res) => {
+    res.json({ message: 'Docker is easy!' })
+})
+
 app.listen(port, () => {
     console.log('Server is on port',  port)
 })
