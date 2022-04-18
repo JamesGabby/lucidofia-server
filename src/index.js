@@ -5,7 +5,7 @@ const userRouter = require('./routers/user')
 const dreamRouter = require('./routers/dream')
 
 const app = express()
-const port = process.env.PORT || 3003
+const port = process.env.PORT || 8080
 
 app.use(cors())
 
