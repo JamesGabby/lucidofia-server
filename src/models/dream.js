@@ -11,6 +11,11 @@ const Dream = mongoose.model('Dream', {
         required: false,
         trim: true
     },
+    emotionsAndFeelings: {
+        type: String,
+        required: false,
+        trim: true
+    },
     wasLucid : {
         type: Boolean
     },

@@ -30,7 +30,6 @@ router.get('/dreams/:id', auth, async (req, res) => {
     const _id = req.params.id
     
     try {
-        // const Dream = await Dream.findById(_id)
         const dream = await Dream.findOne({ _id, owner: req.user._id })
 
         if (!dream) {
@@ -45,7 +44,7 @@ router.get('/dreams/:id', auth, async (req, res) => {
 
 router.patch('/dreams/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body) // Coverts object to array of properties
-    const allowedUpdates = ['title', 'description', 'wasLucid']
+    const allowedUpdates = ['title', 'description', 'wasLucid', 'emotionsAndFeelings']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {
