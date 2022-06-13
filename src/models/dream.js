@@ -17,7 +17,8 @@ const Dream = mongoose.model('Dream', {
         trim: true
     },
     wasLucid : {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
