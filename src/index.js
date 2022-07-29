@@ -23,3 +23,9 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log('Server is on port',  port)
 })
+
+// To start database
+// /users/gabbs/mongodb/bin/mongod.exe --dbpath=/users/gabbs/mongodb-data 
+
+// To start server
+// npm run dev 

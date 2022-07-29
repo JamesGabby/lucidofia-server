@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const Dream = mongoose.model('Dream', {
+    date: {
+        type: Date,
+        required: true
+    },
     title: {
         type: String,
         required: true,

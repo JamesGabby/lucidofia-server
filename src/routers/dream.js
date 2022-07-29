@@ -8,7 +8,7 @@ router.post('/dreams', auth, async (req, res) => {
         ...req.body, // Spreads the key-value pairs from req.body
         owner: req.user._id
     })
-
+    console.log('reached')
     try {
         await dream.save()
         res.status(201).send(dream)
@@ -44,7 +44,7 @@ router.get('/dreams/:id', auth, async (req, res) => {
 
 router.patch('/dreams/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body) // Coverts object to array of properties
-    const allowedUpdates = ['title', 'description', 'wasLucid', 'emotionsAndFeelings']
+    const allowedUpdates = ['date', 'title', 'description', 'wasLucid', 'emotionsAndFeelings']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {
